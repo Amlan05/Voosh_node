@@ -72,7 +72,7 @@ exports.loginUser = async(req, res) => {
 
 exports.getUsers = async(req, res) => {
     let users
-    const {userId} = req.params.is
+    const {userId} = req.params.id
     try{
         users = await User.userModel.find(userId);
     }
