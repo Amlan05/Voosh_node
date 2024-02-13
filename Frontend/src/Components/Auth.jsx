@@ -15,9 +15,9 @@ const Auth = () => {
     let data;
     try {
       if (what === 'signup') {
-        data = await axios.post('http://localhost:5000/users/add-user', userData);
+        data = await axios.post('https://voosh-node.onrender.com/users/add-user', userData);
       } else if (what === 'login') {
-        data = await axios.post('http://localhost:5000/users/login-user', userData);
+        data = await axios.post('https://voosh-node.onrender.com/users/login-user', userData);
       }
 
       const id = data.data.user;

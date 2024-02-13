@@ -25,7 +25,7 @@ const User = () => {
 
     const postData = async(userOrderData) => {
       try{
-        const pushData = await axios.post('http://localhost:5000/orders/add-order', userOrder)
+        const pushData = await axios.post('https://voosh-node.onrender.com/orders/add-order', userOrder)
       }
       catch(err){
         return console.log(err)
@@ -35,7 +35,7 @@ const User = () => {
 
     const fetchData = async() => {
       const userId = localStorage.getItem('userId')
-      const data = await axios.get(`http://localhost:5000/orders/get-order?userId=${userId}`, {
+      const data = await axios.get(`https://voosh-node.onrender.com/orders/get-order?userId=${userId}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}` 
         }

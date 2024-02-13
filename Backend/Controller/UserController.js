@@ -69,18 +69,3 @@ exports.loginUser = async(req, res) => {
     
     
 }
-
-exports.getUsers = async(req, res) => {
-    let users
-    const {userId} = req.params.id
-    try{
-        users = await User.userModel.find(userId);
-    }
-    catch(err){
-        return res.status(500).json({message: "Internal server error"})
-    }
-    if(!users){
-        return res.status(404).json({message: "No users found"})
-    }
-    return res.status(200).json({users})
-}
